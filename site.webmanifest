@@ -1,0 +1,17 @@
+{
+    "name": "Clear Thicket",
+    "short_name": "Clear Thicket",
+    "description": "Independent native Android application studio by Darren Bromwich.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#06140F",
+    "theme_color": "#06140F",
+    "icons": [
+        {
+            "src": "favicon/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

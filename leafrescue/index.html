@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+
+    <title>LeafRescue | AI Plant Care & Leaf Disease Diagnosis</title>
+    <meta name="description" content="LeafRescue diagnoses leaf diseases, identifies root causes, provides botanical care prescriptions and automates watering reminders using Google Gemini AI.">
+    <meta name="keywords" content="LeafRescue, plant disease app, leaf diagnosis, plant doctor, plant care, plant watering reminder, Google Gemini Android, clear thicket">
+    <meta name="author" content="Clear Thicket">
+    <meta name="theme-color" content="#06140F">
+    <link rel="canonical" href="https://clearthicket.co.uk/leafrescue/">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="LeafRescue">
+    <meta property="og:title" content="LeafRescue | AI Plant Care & Leaf Disease Diagnosis">
+    <meta property="og:description" content="Instant leaf disease diagnosis and personalized recovery plans with Google Gemini 3.8 Flash. No subscriptions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearthicket.co.uk/leafrescue/">
+    <meta property="og:image" content="https://clearthicket.co.uk/leafrescue/images/leafrescue-feature-graphic.png">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0">
+
+    <link rel="stylesheet" href="../themes.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "LeafRescue",
+        "applicationCategory": "LifestyleApplication",
+        "applicationSubCategory": "Plant Care",
+        "operatingSystem": "Android 8.0+",
+        "description": "LeafRescue diagnoses leaf diseases, provides tailored botanical treatment plans, and automates watering schedules with Google Gemini AI.",
+        "url": "https://clearthicket.co.uk/leafrescue/",
+        "image": "https://clearthicket.co.uk/leafrescue/images/leafrescue-icon-512.png",
+        "offers": {
+            "@type": "Offer",
+            "price": "4.99",
+            "priceCurrency": "GBP"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Clear Thicket",
+            "url": "https://clearthicket.co.uk"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+    <div class="container">
+        <nav>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="../index.html" class="studio-pill" title="Return to Clear Thicket Studio">
+                    ← Clear Thicket Studio
+                </a>
+                <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <img src="images/leafrescue-icon-512.png" width="34" height="34" style="border-radius: 8px;" alt="LeafRescue Icon">
+                    <span style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF;">Leaf<span style="color: var(--primary);">Rescue</span></span>
+                </a>
+            </div>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+                <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+            </button>
+
+            <ul id="primary-nav">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#preview">Preview</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+    <!-- HERO -->
+    <section class="hero reveal">
+        <div class="container">
+            <div class="badge">
+                🌿 AI Botanical Care Companion
+            </div>
+
+            <h1>
+                Save your sick houseplants with clinical AI accuracy.
+            </h1>
+
+            <p>
+                Stop guessing why your plant has brown tips, yellow patches, or drooping stems. 
+                LeafRescue analyzes your photos using Google's <strong>Gemini 3.8 Flash</strong> vision model 
+                to diagnose diseases, identify root causes, prescribe treatments, and keep your garden thriving.
+            </p>
+
+            <p class="availability">
+                <span class="material-symbols-rounded" aria-hidden="true">schedule</span>
+                Coming Soon to Google Play · 100% Client-Side Privacy
+            </p>
+
+            <div class="buttons">
+                <a href="#preview" class="btn btn-primary">
+                    See the App
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    How it Works
+                </a>
+            </div>
+
+            <div class="scroll-down" aria-hidden="true">↓</div>
+
+            <!-- HERO FEATURE GRAPHIC / BANNER -->
+            <div style="margin-top: 48px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                <img src="images/leafrescue-feature-graphic.png" width="1024" height="500" alt="LeafRescue Google Play Feature Graphic" style="width: 100%; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUE CARDS -->
+    <section id="features" class="reveal pt-4 pb-4">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="app-category">Clinical Botanical Intelligence</span>
+                <h2 style="font-size: 2.4rem; font-weight: 800; margin-top: 8px;">Everything Your Plants Need to Thrive</h2>
+            </div>
+
+            <div class="philosophy-grid">
+                
+                <div class="philosophy-card fade-up">
+                    <div class="philosophy-icon">
+                        <span class="material-symbols-rounded">psychology</span>
+                    </div>
+                    <h3 class="philosophy-title">Multimodal AI Diagnosis</h3>
+                    <p class="philosophy-desc">
+                        Powered by Google Gemini 3.8 Flash. Evaluates leaf discolouration, fungal spots, pest activity, 
+                        and abiotic stress with high confidence scores.
+                    </p>
+                </div>
+
+                <div class="philosophy-card fade-up">
+                    <div class="philosophy-icon">
+                        <span class="material-symbols-rounded">medical_services</span>
+                    </div>
+                    <h3 class="philosophy-title">Actionable Recovery Triage</h3>
+                    <p class="philosophy-desc">
+                        Get clear step-by-step triage: should you isolate the plant, trim foliage, adjust drainage, 
+                        or spray organic neem oil? No medical jargon.
+                    </p>
+                </div>
+
+                <div class="philosophy-card fade-up">
+                    <div class="philosophy-icon">
+                        <span class="material-symbols-rounded">water_drop</span>
+                    </div>
+                    <h3 class="philosophy-title">Automated Watering Alerts</h3>
+                    <p class="philosophy-desc">
+                        Android WorkManager runs a daily background check and sends system notifications 
+                        on the exact morning your plants need watering.
+                    </p>
+                </div>
+
+                <div class="philosophy-card fade-up">
+                    <div class="philosophy-icon">
+                        <span class="material-symbols-rounded">lock</span>
+                    </div>
+                    <h3 class="philosophy-title">100% BYOK Privacy</h3>
+                    <p class="philosophy-desc">
+                        Bring your own free Gemini API key. Your key is encrypted with Android Keystore AES-256-GCM. 
+                        No middleman servers, no data harvesting.
+                    </p>
+                </div>
+
+                <div class="philosophy-card fade-up">
+                    <div class="philosophy-icon">
+                        <span class="material-symbols-rounded">cloud_sync</span>
+                    </div>
+                    <h3 class="philosophy-title">Garden Backup & Restore</h3>
+                    <p class="philosophy-desc">
+                        Export your entire plant collection and care logs to a single JSON file. 
+                        Save directly to Google Drive or local storage and restore anytime.
+                    </p>
+                </div>
+
+                <div class="philosophy-card fade-up">
+                    <div class="philosophy-icon">
+                        <span class="material-symbols-rounded">price_check</span>
+                    </div>
+                    <h3 class="philosophy-title">One-Time £4.99 Unlock</h3>
+                    <p class="philosophy-desc">
+                        Enjoy 5 free scans immediately. Upgrade once for £4.99 to get unlimited scans forever. 
+                        Never pay £40/year subscriptions again.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL APP PREVIEW SPLIT SECTIONS -->
+    <section id="preview" class="reveal pt-4 pb-4" style="background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            
+            <div class="section-header text-center">
+                <span class="app-category">App Showcase</span>
+                <h2 style="font-size: 2.4rem; font-weight: 800; margin-top: 8px;">Designed for Clarity & Speed</h2>
+            </div>
+
+            <!-- ROW 1: DIAGNOSIS -->
+            <div class="feature-split fade-up">
+                <div>
+                    <span class="status-badge status-live">Step 1: Diagnose</span>
+                    <h3 style="font-size: 2rem; font-weight: 800; margin: 12px 0 16px;">
+                        Point, Snap & Understand
+                    </h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                        Take a photo of any sick or discoloured leaf with your camera or import one from your photo gallery. 
+                        LeafRescue instantly breaks down the condition:
+                    </p>
+                    <ul class="app-features-list">
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Botanical Identification:</strong> Plant species & common name.
+                        </li>
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Condition & Severity:</strong> Mild, Moderate, or Severe rating.
+                        </li>
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Underlying Root Causes:</strong> Overwatering, low humidity, pests or fungi.
+                        </li>
+                    </ul>
+                </div>
+                <div class="phone-mockup-frame">
+                    <img src="images/screen-diagnose.png" alt="LeafRescue Diagnosis Screen">
+                </div>
+            </div>
+
+            <!-- ROW 2: MY GARDEN -->
+            <div class="feature-split reverse fade-up">
+                <div>
+                    <span class="status-badge status-live">Step 2: Care & Track</span>
+                    <h3 style="font-size: 2rem; font-weight: 800; margin: 12px 0 16px;">
+                        Keep Your Entire Jungle Thriving
+                    </h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                        Review your diagnosis and save the plant to "My Garden". 
+                        The app tracks dynamic watering intervals and displays actionable status indicators:
+                    </p>
+                    <ul class="app-features-list">
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Dynamic Countdowns:</strong> "Water in 3 days", "Due today", "Overdue".
+                        </li>
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>One-Tap Watering:</strong> Log a watering with a single touch to reset schedule.
+                        </li>
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Status Badges:</strong> Healthy, Under Treatment, Recovering, Quarantine.
+                        </li>
+                    </ul>
+                </div>
+                <div class="phone-mockup-frame">
+                    <img src="images/screen-garden.png" alt="LeafRescue Garden Screen">
+                </div>
+            </div>
+
+            <!-- ROW 3: DETAIL & HISTORY -->
+            <div class="feature-split fade-up">
+                <div>
+                    <span class="status-badge status-live">Step 3: Recovery</span>
+                    <h3 style="font-size: 2rem; font-weight: 800; margin: 12px 0 16px;">
+                        Deep Plant Profiles & Care History
+                    </h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                        Review every past diagnosis and botanical prescription. Keep custom care notes, 
+                        monitor sunlight preferences, and see how your companion recovers over time.
+                    </p>
+                    <ul class="app-features-list">
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Full Diagnostic History:</strong> Track disease resolution.
+                        </li>
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Custom Care Notes:</strong> Soil type, fertilizer cycle, location.
+                        </li>
+                    </ul>
+                </div>
+                <div class="phone-mockup-frame">
+                    <img src="images/screen-detail.png" alt="LeafRescue Plant Detail Screen">
+                </div>
+            </div>
+
+            <!-- ROW 4: SETTINGS & BACKUP -->
+            <div class="feature-split reverse fade-up">
+                <div>
+                    <span class="status-badge status-live">Step 4: Peace of Mind</span>
+                    <h3 style="font-size: 2rem; font-weight: 800; margin: 12px 0 16px;">
+                        Total Privacy, Alerts & Backup
+                    </h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                        Everything is under your control:
+                    </p>
+                    <ul class="app-features-list">
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Watering Alerts:</strong> Verify notifications with an instant test trigger.
+                        </li>
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Garden Backup & Restore:</strong> Export to Google Drive or local files anytime.
+                        </li>
+                        <li>
+                            <span class="material-symbols-rounded">check_circle</span>
+                            <strong>Direct Support:</strong> Built-in diagnostic mailer to our team.
+                        </li>
+                    </ul>
+                </div>
+                <div class="phone-mockup-frame">
+                    <img src="images/screen-settings.png" alt="LeafRescue Settings Screen">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRICING BANNER -->
+    <section id="pricing" class="reveal pt-4 pb-4">
+        <div class="container">
+            <div class="pricing-banner fade-up">
+                <span class="app-category">Simple, Honest Pricing</span>
+                <div class="price-tag">£4.99</div>
+                <div class="price-sub">One-Time Lifetime Purchase · No Recurring Bills</div>
+                <p style="color: var(--text-secondary); max-width: 540px; margin: 0 auto 24px; line-height: 1.6;">
+                    Every installation comes with <strong>5 free full AI diagnoses</strong>. 
+                    Unlock unlimited diagnoses and lifetime watering alerts with a single one-time purchase.
+                </p>
+                <div style="display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+                    <a href="https://play.google.com/store/apps/details?id=com.clearthicket.leafrescue" class="btn btn-primary">
+                        Get LeafRescue on Google Play
+                    </a>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 16px;">
+                    Google Play in-app product ID: <code>leafrescue_pro_unlock</code>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="reveal pt-4 pb-4" style="background: var(--bg-alt); border-top: 1px solid var(--border);">
+        <div class="container" style="max-width: 820px;">
+            <div class="section-header text-center">
+                <span class="app-category">Got Questions?</span>
+                <h2 style="font-size: 2.2rem; font-weight: 800; margin-top: 8px;">Frequently Asked Questions</h2>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 36px;">
+                
+                <details style="background: var(--surface); padding: 20px 24px; border-radius: var(--radius); border: 1px solid var(--border);">
+                    <summary style="font-weight: 700; color: var(--text); cursor: pointer; font-size: 1.05rem;">
+                        Why do I need a Google Gemini API key?
+                    </summary>
+                    <p style="color: var(--text-secondary); margin-top: 12px; line-height: 1.6; font-size: 0.95rem;">
+                        LeafRescue uses a 100% private <em>Bring Your Own Key (BYOK)</em> model. 
+                        Instead of charging you high monthly subscriptions to cover cloud inference servers, 
+                        the app connects directly and securely from your phone to Google Gemini using your personal API key. 
+                        You can get a free key in 30 seconds from <a href="https://aistudio.google.com/" target="_blank" rel="noopener" style="color: var(--primary);">Google AI Studio</a>.
+                    </p>
+                </details>
+
+                <details style="background: var(--surface); padding: 20px 24px; border-radius: var(--radius); border: 1px solid var(--border);">
+                    <summary style="font-weight: 700; color: var(--text); cursor: pointer; font-size: 1.05rem;">
+                        Is my API key safe on my device?
+                    </summary>
+                    <p style="color: var(--text-secondary); margin-top: 12px; line-height: 1.6; font-size: 0.95rem;">
+                        Yes. LeafRescue encrypts your key using the hardware-backed <strong>Android Keystore system (AES-256-GCM)</strong>. 
+                        Your key never leaves your phone and is never transmitted to Clear Thicket or any third party.
+                    </p>
+                </details>
+
+                <details style="background: var(--surface); padding: 20px 24px; border-radius: var(--radius); border: 1px solid var(--border);">
+                    <summary style="font-weight: 700; color: var(--text); cursor: pointer; font-size: 1.05rem;">
+                        How do watering notifications work?
+                    </summary>
+                    <p style="color: var(--text-secondary); margin-top: 12px; line-height: 1.6; font-size: 0.95rem;">
+                        LeafRescue schedules an energy-efficient background job using Android's native WorkManager. 
+                        Once every 24 hours, it checks your saved plants and triggers a notification if any plant 
+                        has reached or exceeded its watering interval.
+                    </p>
+                </details>
+
+                <details style="background: var(--surface); padding: 20px 24px; border-radius: var(--radius); border: 1px solid var(--border);">
+                    <summary style="font-weight: 700; color: var(--text); cursor: pointer; font-size: 1.05rem;">
+                        What happens if I change or lose my phone?
+                    </summary>
+                    <p style="color: var(--text-secondary); margin-top: 12px; line-height: 1.6; font-size: 0.95rem;">
+                        You can export a JSON backup of your garden to Google Drive or local storage at any time via Settings. 
+                        On your new phone, simply install LeafRescue, tap "Restore Backup", and restore your Pro purchase 
+                        via Google Play with a single tap.
+                    </p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding: 40px 0; border-bottom: 1px solid var(--border);">
+            <div>
+                <img src="images/leafrescue-icon-512.png" width="40" height="40" style="border-radius: 10px;" alt="LeafRescue Icon">
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">
+                    LeafRescue by Clear Thicket · Native AI Plant Care.
+                </p>
+            </div>
+            <ul style="display: flex; gap: 24px; list-style: none; flex-wrap: wrap;">
+                <li><a href="../index.html" style="color: var(--text-secondary); text-decoration: none;">Clear Thicket Studio</a></li>
+                <li><a href="index.html" style="color: var(--text-secondary); text-decoration: none;">LeafRescue Home</a></li>
+                <li><a href="privacy.html" style="color: var(--text-secondary); text-decoration: none;">Privacy Policy</a></li>
+                <li><a href="support.html" style="color: var(--text-secondary); text-decoration: none;">Support & FAQ</a></li>
+            </ul>
+        </div>
+        <div style="padding: 24px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--text-muted); font-size: 0.82rem;">
+            <p>© 2026 Clear Thicket. All rights reserved.</p>
+            <p>Support: <a href="mailto:leafrescue@clearthicket.co.uk" style="color: var(--primary);">leafrescue@clearthicket.co.uk</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

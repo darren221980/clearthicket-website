@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+
+    <title>About | Clear Thicket & Darren Bromwich</title>
+    <meta name="description" content="Learn about Darren Bromwich and Clear Thicket — an independent Android development studio building focused, privacy-first mobile apps.">
+    <meta name="author" content="Darren Bromwich">
+    <meta name="theme-color" content="#06140F">
+    <link rel="canonical" href="https://clearthicket.co.uk/about.html">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Clear Thicket">
+    <meta property="og:title" content="About | Clear Thicket & Darren Bromwich">
+    <meta property="og:description" content="Independent Android craft, privacy-first architectures, and fair one-time pricing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearthicket.co.uk/about.html">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0">
+
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo" aria-label="Clear Thicket Home">
+                <img src="images/brand/logo-horizontal.svg" width="180" height="42" alt="Clear Thicket">
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+                <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+            </button>
+
+            <ul id="primary-nav">
+                <li><a href="index.html#apps">Apps</a></li>
+                <li><a href="leafrescue/index.html">LeafRescue</a></li>
+                <li><a href="breatherun/index.html">BreatheRun</a></li>
+                <li><a href="about.html" class="active" style="color: var(--primary);">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+    <section class="reveal pt-4 pb-4">
+        <div class="container" style="max-width: 860px;">
+            <div class="badge">
+                👨‍💻 Behind the Studio
+            </div>
+
+            <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin: 16px 0 24px;">
+                Hi, I'm Darren Bromwich.
+            </h1>
+
+            <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px;">
+                I am an independent software engineer and creator based in the United Kingdom. 
+                I founded <strong>Clear Thicket</strong> to build native Android applications that respect your attention, 
+                your device, and your hard-earned money.
+            </p>
+
+            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; margin-bottom: 48px;">
+                <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; color: var(--text);">
+                    Why "Clear Thicket"?
+                </h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">
+                    Modern app stores have become a dense, overgrown thicket of predatory £40/year subscriptions, 
+                    invasive analytics trackers, forced sign-up screens, and bloated web wrappers.
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    <strong>Clear Thicket</strong> stands for cutting a clean path through that noise: providing 
+                    clarity, simplicity, and honest digital craft that does exactly what it promises without compromise.
+                </p>
+            </div>
+
+            <h2 style="font-size: 2rem; font-weight: 800; margin: 40px 0 20px;">
+                What Drives My Work
+            </h2>
+
+            <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px;">
+                
+                <div style="background: var(--bg-alt); border-left: 4px solid var(--primary); padding: 24px 28px; border-radius: 0 var(--radius) var(--radius) 0;">
+                    <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px;">1. Client-Side BYOK & Zero Telemetry</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                        Most modern apps require sending your photos, running routes, or personal notes to a private cloud server. 
+                        My apps run locally on your phone. In LeafRescue, your Gemini API key is encrypted directly inside the hardware 
+                        Android Keystore using AES-256-GCM. Your data never touches a Clear Thicket server because we don't have one to store it on.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-alt); border-left: 4px solid var(--primary); padding: 24px 28px; border-radius: 0 var(--radius) var(--radius) 0;">
+                    <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px;">2. Rejecting the Subscription Treadmill</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                        You shouldn't have to pay a recurring monthly or yearly fee just to keep a houseplant alive or run a 5K. 
+                        Every Clear Thicket app offers a generous free tier followed by a fair, transparent one-time lifetime unlock 
+                        via Google Play. Once you unlock it, it is yours forever.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-alt); border-left: 4px solid var(--primary); padding: 24px 28px; border-radius: 0 var(--radius) var(--radius) 0;">
+                    <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px;">3. Native Android Excellence</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">
+                        I build strictly with native Android technologies: Kotlin, Jetpack Compose, Room SQLite, and WorkManager. 
+                        No bloated cross-platform engines. This guarantees instant startup, 120Hz smooth scrolling, offline-first reliability, 
+                        and battery efficiency.
+                    </p>
+                </div>
+
+            </div>
+
+            <h2 style="font-size: 2rem; font-weight: 800; margin: 40px 0 20px;">
+                Technologies & Tooling
+            </h2>
+
+            <div class="tag-cloud" style="margin-bottom: 48px;">
+                <span class="tag-item">Kotlin 2.0</span>
+                <span class="tag-item">Jetpack Compose</span>
+                <span class="tag-item">Material 3</span>
+                <span class="tag-item">Android Jetpack Room</span>
+                <span class="tag-item">WorkManager</span>
+                <span class="tag-item">DataStore Preferences</span>
+                <span class="tag-item">Google Play Billing Client</span>
+                <span class="tag-item">Google Gemini Multimodal AI</span>
+                <span class="tag-item">Android Keystore Security</span>
+                <span class="tag-item">Coroutines & StateFlow</span>
+                <span class="tag-item">Clean Architecture / MVVM</span>
+            </div>
+
+            <div style="text-align: center; padding: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+                <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 12px;">Have feedback or a question?</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">
+                    I personally read and reply to all user inquiries, bug reports, and suggestions.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">
+                        Contact Me
+                    </a>
+                    <a href="index.html#apps" class="btn btn-secondary">
+                        View Apps
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding: 40px 0; border-bottom: 1px solid var(--border);">
+            <div>
+                <img src="images/brand/logo-horizontal.svg" width="160" height="38" alt="Clear Thicket">
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">
+                    Independent native Android application studio.
+                </p>
+            </div>
+            <ul style="display: flex; gap: 24px; list-style: none; flex-wrap: wrap;">
+                <li><a href="index.html" style="color: var(--text-secondary); text-decoration: none;">Home</a></li>
+                <li><a href="leafrescue/index.html" style="color: var(--text-secondary); text-decoration: none;">LeafRescue</a></li>
+                <li><a href="breatherun/index.html" style="color: var(--text-secondary); text-decoration: none;">BreatheRun</a></li>
+                <li><a href="about.html" style="color: var(--text-secondary); text-decoration: none;">About</a></li>
+                <li><a href="privacy.html" style="color: var(--text-secondary); text-decoration: none;">Studio Privacy</a></li>
+                <li><a href="contact.html" style="color: var(--text-secondary); text-decoration: none;">Contact</a></li>
+            </ul>
+        </div>
+        <div style="padding: 24px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--text-muted); font-size: 0.82rem;">
+            <p>© 2026 Clear Thicket (Darren Bromwich). All rights reserved.</p>
+            <p>clearthicket.co.uk · Made in the United Kingdom</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

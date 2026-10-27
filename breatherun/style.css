@@ -1,0 +1,2476 @@
+/* ==========================================================
+   BreatheRun Website v2
+   style.css
+   Part 1 of 3
+   ========================================================== */
+
+
+/* ==========================================================
+   TYPEFACE
+
+   Manrope, per the brand guidelines. Loaded via <link> in each
+   page head rather than @import, which blocks rendering.
+   ========================================================== */
+
+
+/* ==========================================================
+   NON-THEME TOKENS
+
+   Every colour lives in themes.css, keyed off the data-theme
+   attribute on <html>. Only geometry and motion sit here, so
+   a theme swap never has to touch this file.
+
+   To change the active theme:  ./tools/switch-theme.sh <name>
+   ========================================================== */
+
+:root {
+
+    /* Layout */
+
+    --container: 1200px;
+
+    --radius:16px;
+    --radius-lg:28px;
+
+    /* Hairlines. Every theme surface is dark, so one value works
+       across all eighteen. */
+
+    --border: rgba(255,255,255,.08);
+
+    /* Shadows */
+
+    --shadow:
+        0 12px 35px rgba(0,0,0,.28);
+
+    --shadow-hover:
+        0 18px 45px rgba(0,0,0,.38);
+
+    /* Animation */
+
+    --transition:.30s ease;
+
+}
+
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:'Manrope',system-ui,-apple-system,sans-serif;
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    /* Required now that every <img> carries its intrinsic
+       width/height. Those attributes let the browser reserve
+       the right box before the file arrives, but without this
+       the declared height would survive the max-width squeeze
+       and the image would render stretched. */
+
+    height:auto;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    font:inherit;
+
+}
+
+
+/* ==========================================================
+   GLOBAL TYPOGRAPHY
+   ========================================================== */
+
+h1{
+
+    font-size:clamp(3rem,7vw,5.2rem);
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+    margin-bottom:28px;
+
+    font-weight:800;
+
+}
+
+h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    margin-bottom:24px;
+
+    font-weight:700;
+
+}
+
+h3{
+
+    font-size:1.35rem;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    font-size:1.1rem;
+
+    color:var(--text-secondary);
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+}
+
+.section-subtitle{
+
+    max-width:720px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+   ========================================================== */
+
+.container{
+
+    width:min(92%,var(--container));
+
+    margin:auto;
+
+}
+
+
+/* ==========================================================
+   SECTIONS
+   ========================================================== */
+
+section{
+
+    padding:120px 0;
+
+}
+
+
+/* ==========================================================
+   UTILITIES
+   ========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mb-2{
+
+    margin-bottom:20px;
+
+}
+
+.mb-3{
+
+    margin-bottom:30px;
+
+}
+
+.mb-4{
+
+    margin-bottom:40px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:rgba(var(--bg-rgb),.78);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 0;
+
+}
+
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.logo{
+
+    display:inline-flex;
+
+    align-items:center;
+
+}
+
+/* The horizontal lockup already contains the wordmark as
+   outlined paths, so no text sits beside it and no circular
+   crop is applied. Clear space is built into the viewBox. */
+
+.logo img{
+
+    height:38px;
+
+    width:auto;
+
+}
+
+@media (max-width:520px){
+
+    .logo img{
+
+        height:32px;
+
+    }
+
+}
+
+/* ==========================================================
+   SCROLL REVEAL
+
+   Visible is the default. The hidden state is scoped to .js,
+   which script.js sets on <html> from the page head, so a
+   reader without JavaScript gets the whole page rather than a
+   header and a footer.
+   ========================================================== */
+
+.js .reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.js .reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.btn{
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.22);
+
+}
+
+.btn:active{
+
+    transform:translateY(0);
+
+}
+
+.feature-card,
+.built-card,
+.support-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.feature-card:hover,
+.built-card:hover,
+.support-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+
+nav ul{
+
+    display:flex;
+
+    align-items:center;
+
+    list-style:none;
+
+    gap:34px;
+
+}
+
+/* The toggle only exists below the nav breakpoint; see the
+   responsive block at the foot of this file. */
+
+.nav-toggle{
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:44px;
+
+    height:44px;
+
+    padding:0;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.nav-toggle:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary-text);
+
+}
+
+.nav-toggle .material-symbols-rounded{
+
+    font-size:24px;
+
+    line-height:1;
+
+}
+
+nav ul li a{
+
+    color:var(--text-secondary);
+
+    transition:var(--transition);
+
+    font-weight:500;
+
+}
+
+nav ul li a:hover{
+
+    color:var(--text);
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.hero{
+
+    position:relative;
+
+    text-align:center;
+
+    padding-top:90px;
+
+    overflow:hidden;
+
+}
+
+.hero h1{
+
+    background:linear-gradient(
+        90deg,
+        var(--text),
+        var(--ring-end)
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+    max-width:720px;
+
+    margin:0 auto 42px;
+
+}
+
+/* Release status, sitting directly above the buttons so the
+   CTA is never read as a live download link. */
+
+.hero p.availability{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin:-18px auto 26px;
+
+    color:var(--text-muted);
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+}
+
+.availability .material-symbols-rounded{
+
+    font-size:20px;
+
+    line-height:1;
+
+}
+
+
+/* ==========================================================
+   HERO BADGE
+   ========================================================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:rgba(var(--primary-rgb),.12);
+
+    border:1px solid rgba(var(--primary-rgb),.25);
+
+    color:var(--primary-soft);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    margin-bottom:28px;
+
+    font-size:.95rem;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    /* The launcher plate gradient. White on flat --primary only
+       reaches ~2.4:1, the plate ramp clears AA. */
+
+    background:linear-gradient(
+        135deg,
+        var(--plate-ink-start),
+        var(--plate-ink-mid) 55%,
+        var(--plate-ink-end)
+    );
+
+    color:var(--on-plate);
+
+}
+
+.btn-primary:hover{
+
+    background:linear-gradient(
+        135deg,
+        var(--plate-ink-mid),
+        var(--plate-ink-end)
+    );
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 28px rgba(var(--primary-rgb),.35);
+
+}
+
+.btn-secondary{
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+}
+
+.btn-secondary:hover{
+
+    background:rgba(255,255,255,.05);
+
+}
+
+
+/* ==========================================================
+   BREATHING GLOW
+   ========================================================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:620px;
+
+    height:620px;
+
+    background:
+
+        radial-gradient(circle,
+        rgba(var(--primary-rgb),.28),
+        transparent 72%);
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:180px;
+
+    animation:breathe 8s ease-in-out infinite;
+
+    z-index:-1;
+
+}
+
+@keyframes breathe{
+
+    0%{
+
+        transform:translateX(-50%) scale(.9);
+
+        opacity:.45;
+
+    }
+
+    50%{
+
+        transform:translateX(-50%) scale(1.12);
+
+        opacity:.75;
+
+    }
+
+    100%{
+
+        transform:translateX(-50%) scale(.9);
+
+        opacity:.45;
+
+    }
+
+}
+
+
+/* ==========================================================
+   FLOATING PHONE
+   ========================================================== */
+
+.hero-phone{
+
+    width:340px;
+
+    margin:90px auto 0;
+
+    position:relative;
+
+    animation:floatPhone 5s ease-in-out infinite;
+
+}
+
+.hero-phone img{
+
+    border-radius:34px;
+
+    box-shadow:var(--shadow);
+
+}
+
+@keyframes floatPhone{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-14px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   SCROLL INDICATOR
+   ========================================================== */
+
+.scroll-down{
+
+    margin-top:50px;
+
+    font-size:2rem;
+
+    color:var(--text-muted);
+
+    animation:bounce 2.5s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(10px);
+
+    }
+
+}
+
+/* ==========================================================
+   BUILT FOR
+   ========================================================== */
+
+.built-for{
+    background: var(--bg-alt);
+}
+
+.built-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.built-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:38px;
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.built-card:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--surface-hover);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.built-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        180deg,
+        rgba(var(--primary-rgb),.08),
+        transparent 55%
+    );
+
+    opacity:0;
+
+    transition:var(--transition);
+
+}
+
+.built-card:hover::before{
+
+    opacity:1;
+
+}
+
+.built-icon{
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:24px;
+
+    border-radius:20px;
+
+    background:rgba(var(--primary-rgb),.12);
+
+    color:var(--primary-text);
+
+}
+
+.built-icon .material-symbols-rounded{
+
+    font-size:34px;
+
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 500,
+        "GRAD" 0,
+        "opsz" 24;
+
+}
+
+.built-card h3{
+
+    margin-bottom:14px;
+
+}
+
+.built-card p{
+
+    color:var(--text-secondary);
+
+}
+
+
+/* ==========================================================
+   FEATURES
+   ========================================================== */
+
+.features{
+
+    background:var(--bg);
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:32px;
+
+}
+
+.feature{
+
+    padding:40px;
+
+    border-radius:var(--radius);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+.feature:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+    background:var(--surface-hover);
+
+}
+
+.feature-number{
+
+    display:inline-flex;
+
+    width:44px;
+
+    height:44px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--plate-ink-start),
+        var(--plate-ink-end)
+    );
+
+    color:var(--on-plate);
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+
+/* ==========================================================
+   APP PREVIEW
+   ========================================================== */
+
+.preview{
+
+    background:var(--bg-alt);
+
+}
+
+.phone-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:40px;
+
+}
+
+.phone-card{
+
+    text-align:center;
+
+}
+
+.phone-frame{
+
+    position:relative;
+
+    background:var(--surface-deep);
+
+    border-radius:42px;
+
+    padding:14px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.phone-frame:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.phone-frame img{
+
+    border-radius:30px;
+
+}
+
+.phone-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:6px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:10px;
+
+    background:rgba(255,255,255,.14);
+
+    border-radius:100px;
+
+}
+
+.phone-card h3{
+
+    margin-top:28px;
+
+}
+
+.phone-card p{
+
+    margin-top:8px;
+
+}
+
+.showcase{
+
+    position:relative;
+
+    margin-top:80px;
+
+    height:850px;
+
+}
+
+.phone{
+
+    position:absolute;
+
+    width:280px;
+
+    border-radius:42px;
+
+    padding:14px;
+
+    background:var(--bg-alt);
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.35),
+        0 5px 15px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+.phone:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.phone img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:28px;
+
+}
+
+.phone-main{
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:4;
+
+}
+
+.phone-left{
+
+    left:5%;
+
+    top:140px;
+
+    transform:rotate(-8deg);
+
+}
+
+.phone-right{
+
+    right:5%;
+
+    top:140px;
+
+    transform:rotate(8deg);
+
+}
+
+.phone-bottom{
+
+    left:50%;
+
+    bottom:0;
+
+    transform:translateX(-50%) scale(.92);
+
+    opacity:.85;
+
+}
+
+.phone-main{
+
+    animation:floatMain 6s ease-in-out infinite;
+
+}
+
+.phone-left{
+
+    animation:floatSide 7s ease-in-out infinite;
+
+}
+
+.phone-right{
+
+    animation:floatSide 8s ease-in-out infinite;
+
+}
+
+.phone-bottom{
+
+    animation:floatBottom 9s ease-in-out infinite;
+
+}
+
+@keyframes floatMain{
+
+    0%,100%{
+
+        transform:translateX(-50%) translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateX(-50%) translateY(-14px);
+
+    }
+
+}
+
+@keyframes floatSide{
+
+    0%,100%{
+
+        transform:rotate(-8deg) translateY(0);
+
+    }
+
+    50%{
+
+        transform:rotate(-8deg) translateY(-10px);
+
+    }
+
+}
+
+@keyframes floatBottom{
+
+    0%,100%{
+
+        transform:translateX(-50%) scale(.92);
+
+    }
+
+    50%{
+
+        transform:translateX(-50%) scale(.95);
+
+    }
+
+}
+
+
+/* ==========================================================
+   PRIVACY SECTION
+   ========================================================== */
+
+.privacy{
+
+    position:relative;
+
+}
+
+.privacy-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.privacy-card{
+
+    padding:36px;
+
+    border-radius:var(--radius);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+.privacy-card:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--surface-hover);
+
+}
+
+.privacy-card h3{
+
+    margin-bottom:18px;
+
+}
+
+.privacy-card p{
+
+    color:var(--text-secondary);
+
+}
+
+.privacy-button{
+
+    margin-top:60px;
+
+    text-align:center;
+
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.faq{
+
+    background:var(--bg-alt);
+
+}
+
+.faq-container{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+/* Native <details>/<summary>. The disclosure behaviour, the
+   keyboard support and the open state all come free; only the
+   marker and the chevron need styling. */
+
+.faq-item{
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+    border-radius:16px;
+
+    margin-bottom:18px;
+
+    overflow:hidden;
+
+}
+
+.faq-question{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:24px 28px;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    list-style:none;
+
+    transition:var(--transition);
+
+}
+
+/* Suppress the default triangle in every engine. */
+
+.faq-question::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.faq-question::marker{
+
+    content:"";
+
+}
+
+/* Our own chevron, drawn from a border so it needs no font. */
+
+.faq-question::after{
+
+    content:"";
+
+    flex:none;
+
+    width:9px;
+
+    height:9px;
+
+    margin-right:4px;
+
+    border-right:2px solid var(--primary-text);
+
+    border-bottom:2px solid var(--primary-text);
+
+    transform:rotate(45deg) translate(-2px,-2px);
+
+    transition:transform var(--transition);
+
+}
+
+.faq-item[open] .faq-question::after{
+
+    transform:rotate(-135deg) translate(-2px,-2px);
+
+}
+
+.faq-question:hover{
+
+    color:var(--primary-text);
+
+}
+
+.faq-question:focus-visible{
+
+    outline:3px solid var(--accent);
+
+    outline-offset:-3px;
+
+}
+
+.faq-answer{
+
+    padding:0 28px 28px;
+
+    color:var(--text-secondary);
+
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+.cta{
+
+    text-align:center;
+
+    background:linear-gradient(
+        180deg,
+        transparent,
+        rgba(var(--primary-rgb),.08)
+    );
+
+}
+
+.cta h2{
+
+    max-width:700px;
+
+    margin-inline:auto;
+
+}
+
+.cta p{
+
+    max-width:650px;
+
+    margin:0 auto 40px;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+footer{
+
+    border-top:1px solid var(--border);
+
+    background:var(--surface-deep);
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+
+    padding:70px 0;
+
+}
+
+.footer-brand p{
+
+    margin-top:20px;
+
+    max-width:360px;
+
+}
+
+.footer-links h3{
+
+    margin-bottom:20px;
+
+    font-size:1rem;
+
+}
+
+.footer-links ul{
+
+    list-style:none;
+
+}
+
+.footer-links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+    color:var(--text-secondary);
+
+    transition:var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    color:var(--text);
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+    padding:30px 0;
+
+    color:var(--text-muted);
+
+    font-size:.95rem;
+
+}
+
+
+/* ==========================================================
+   GENERAL ANIMATIONS
+   ========================================================== */
+
+/* Driven by the same observer as .reveal, so a card no longer
+   plays its entrance while it is still below the fold. Same
+   .js scoping: no JavaScript, no hidden state. */
+
+.js .fade-up{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.js .fade-up.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.scale-in{
+
+    animation:scaleIn .7s ease both;
+
+}
+
+@keyframes scaleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width:1200px){
+
+    section{
+        padding:100px 0;
+    }
+
+    .hero-phone{
+        width:300px;
+    }
+
+}
+
+@media (max-width:992px){
+
+    /* Logo and toggle stay on one row; the links become a
+       panel below them rather than a stack that pushes the
+       hero off the screen. */
+
+    .nav-toggle{
+        display:inline-flex;
+    }
+
+    nav{
+        flex-wrap:wrap;
+    }
+
+    nav ul{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding-bottom:12px;
+    }
+
+    nav ul.is-open{
+        display:flex;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:14px 4px;
+        border-top:1px solid var(--border);
+    }
+
+    /* No JavaScript means no toggle, so show the links
+       outright rather than hiding them behind a dead button. */
+
+    html:not(.js) .nav-toggle{
+        display:none;
+    }
+
+    html:not(.js) nav ul{
+        display:flex;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .footer-brand p{
+        margin-inline:auto;
+    }
+
+    .hero{
+        padding-top:70px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    section{
+        padding:80px 0;
+    }
+
+    h1{
+        font-size:clamp(2.5rem,10vw,3.5rem);
+        letter-spacing:-1px;
+    }
+
+    h2{
+        font-size:2rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
+    .buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:320px;
+    }
+
+    .hero-phone{
+        width:260px;
+        margin-top:70px;
+    }
+
+    .phone-grid,
+    .feature-grid,
+    .built-grid,
+    .privacy-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .container{
+        width:94%;
+    }
+
+    .badge{
+        font-size:.85rem;
+        padding:8px 14px;
+    }
+
+    .built-card,
+    .feature,
+    .privacy-card{
+        padding:28px;
+    }
+
+    .phone-frame{
+        border-radius:30px;
+        padding:10px;
+    }
+
+}
+
+
+/* ==========================================================
+   LEGAL PAGES
+   ========================================================== */
+
+.legal-page{
+
+    padding:120px 0;
+
+}
+
+.legal-page h1{
+
+    margin-bottom:20px;
+
+}
+
+.legal-page h2{
+
+    margin-top:60px;
+
+    margin-bottom:20px;
+
+}
+
+.legal-page h3{
+
+    margin-top:36px;
+
+}
+
+.legal-page p{
+
+    margin-bottom:18px;
+
+}
+
+.legal-page ul{
+
+    margin:20px 0 30px 22px;
+
+}
+
+.legal-page li{
+
+    margin-bottom:12px;
+
+    color:var(--text-secondary);
+
+}
+
+.legal-page a{
+
+    color:var(--primary-text);
+
+}
+
+.legal-page a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* ==========================================================
+   SUPPORT PAGE
+   ========================================================== */
+
+.support-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.support-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:36px;
+
+    transition:var(--transition);
+
+}
+
+.support-card:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--surface-hover);
+
+}
+
+.support-card h3{
+
+    margin-bottom:16px;
+
+}
+
+
+/* ==========================================================
+   ICON CIRCLES
+   ========================================================== */
+
+.icon-circle{
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(var(--primary-rgb),.12);
+
+    color:var(--primary-text);
+
+}
+
+.icon-circle .material-symbols-rounded{
+
+    font-size:28px;
+
+}
+
+
+/* ==========================================================
+   LINKS
+   ========================================================== */
+
+a.inline-link{
+
+    color:var(--primary-text);
+
+    transition:var(--transition);
+
+}
+
+a.inline-link:hover{
+
+    color:var(--primary-soft);
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible{
+
+    outline:3px solid var(--accent);
+
+    outline-offset:4px;
+
+    border-radius:8px;
+
+}
+
+/* Off-screen until tabbed to, so keyboard and screen reader
+   users can skip the nav on every page. */
+
+.skip-link{
+
+    position:absolute;
+
+    top:0;
+
+    left:16px;
+
+    z-index:1000;
+
+    padding:12px 20px;
+
+    border-radius:0 0 12px 12px;
+
+    /* Same plate ramp as .btn-primary, which is the pairing
+       that clears AA in all eighteen themes. */
+
+    background:var(--plate-ink-mid);
+
+    color:var(--on-plate);
+
+    font-weight:600;
+
+    transform:translateY(-120%);
+
+    transition:transform var(--transition);
+
+}
+
+.skip-link:focus{
+
+    transform:translateY(0);
+
+}
+
+/* <main tabindex="-1"> is the skip link's target, so focus
+   really does move rather than only the scroll position. It
+   is not an interactive control, so it takes no focus ring. */
+
+main:focus{
+
+    outline:none;
+
+}
+
+::selection{
+
+    background:var(--primary-text);
+
+    color:var(--bg);
+
+}
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--surface-deep);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+    /* script.js already marks everything active in this case,
+       but with transitions off a failed script would leave the
+       page blank. Belt and braces. */
+
+    .js .reveal,
+    .js .fade-up{
+
+        opacity:1 !important;
+
+        transform:none !important;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SIMPLE FADE HELPERS
+   ========================================================== */
+
+.fade{
+
+    opacity:0;
+
+    animation:fadeIn .8s ease forwards;
+
+}
+
+/* Both properties, so one set of delay classes works whether
+   the element is animated (.fade) or transitioned (.fade-up). */
+
+.delay-1{
+    animation-delay:.15s;
+    transition-delay:.15s;
+}
+
+.delay-2{
+    animation-delay:.30s;
+    transition-delay:.30s;
+}
+
+.delay-3{
+    animation-delay:.45s;
+    transition-delay:.45s;
+}
+
+.delay-4{
+    animation-delay:.60s;
+    transition-delay:.60s;
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ==========================================================
+   IMAGE HELPERS
+   ========================================================== */
+
+.rounded{
+
+    border-radius:var(--radius);
+
+}
+
+.shadow{
+
+    box-shadow:var(--shadow);
+
+}
+
+.shadow-hover:hover{
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.legal-page h2{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.legal-page h2 .material-symbols-rounded{
+
+    color:var(--primary-text);
+
+    font-size:30px;
+
+}
+
+/* ==========================================================
+   SPACING UTILITIES
+   ========================================================== */
+
+.mt-1{margin-top:10px;}
+.mt-2{margin-top:20px;}
+.mt-3{margin-top:30px;}
+.mt-4{margin-top:40px;}
+.mt-5{margin-top:60px;}
+
+.mb-1{margin-bottom:10px;}
+.mb-2{margin-bottom:20px;}
+.mb-3{margin-bottom:30px;}
+.mb-4{margin-bottom:40px;}
+.mb-5{margin-bottom:60px;}
+
+.pt-1{padding-top:10px;}
+.pt-2{padding-top:20px;}
+.pt-3{padding-top:30px;}
+.pt-4{padding-top:40px;}
+
+.pb-1{padding-bottom:10px;}
+.pb-2{padding-bottom:20px;}
+.pb-3{padding-bottom:30px;}
+.pb-4{padding-bottom:40px;}
+
+
+/* ==========================================================
+   HORIZONTAL RULE
+   ========================================================== */
+
+hr{
+
+    border:none;
+
+    border-top:1px solid var(--border);
+
+    margin:60px 0;
+
+}
+
+
+/* ==========================================================
+   END OF FILE
+   ========================================================== */
+
+
+/* ==========================================================
+   CLEAR THICKET STUDIO & LEAFRESCUE EXTENSIONS
+   ========================================================== */
+
+/* Top studio pill in nav */
+.studio-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.studio-pill:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text);
+    border-color: var(--primary);
+}
+
+/* App Showcase Grid */
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.app-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--ring-start), var(--ring-end));
+    opacity: 0.8;
+}
+
+.app-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.app-icon-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.app-meta {
+    flex: 1;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.app-category {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.status-live {
+    background: rgba(30, 200, 176, 0.15);
+    color: #2FBF71;
+    border: 1px solid rgba(47, 191, 113, 0.35);
+}
+
+.status-coming {
+    background: rgba(245, 127, 23, 0.15);
+    color: #FBBF24;
+    border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.app-description {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
+}
+
+.app-features-list {
+    list-style: none;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+}
+
+.app-features-list li .material-symbols-rounded {
+    color: var(--primary);
+    font-size: 1.15rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.app-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Philosophy / Principles Section */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.philosophy-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.philosophy-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.philosophy-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(var(--primary-rgb), 0.15);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.philosophy-icon .material-symbols-rounded {
+    font-size: 26px;
+}
+
+.philosophy-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.philosophy-desc {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* Bio Card for About page */
+.bio-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .bio-card {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        text-align: center;
+    }
+}
+
+.bio-avatar-wrap {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--ring-start), var(--ring-end));
+    padding: 4px;
+    box-shadow: var(--shadow);
+}
+
+.bio-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #0B1B15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.tag-item {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+/* Feature split rows */
+.feature-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin: 80px 0;
+}
+
+.feature-split.reverse {
+    direction: rtl;
+}
+
+.feature-split.reverse > * {
+    direction: ltr;
+}
+
+@media (max-width: 900px) {
+    .feature-split,
+    .feature-split.reverse {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+}
+
+.phone-mockup-frame {
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: 36px;
+    padding: 10px;
+    background: #111B22;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.phone-mockup-frame img {
+    border-radius: 28px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Pricing Highlight Card */
+.pricing-banner {
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.12), rgba(0,0,0,0.4));
+    border: 1px solid rgba(var(--primary-rgb), 0.35);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    text-align: center;
+    max-width: 720px;
+    margin: 48px auto;
+}
+
+.price-tag {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 16px 0 8px 0;
+    line-height: 1;
+}
+
+.price-sub {
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
