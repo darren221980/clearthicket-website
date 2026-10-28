@@ -1,6 +1,6 @@
 # 🌿 Clear Thicket Website (`clearthicket.co.uk`)
 
-The official portfolio, app showcase, and privacy hub for **Clear Thicket** — an independent native Android development studio founded by **Darren Bromwich**.
+The official portfolio, app showcase, and privacy hub for **Clear Thicket** — an independent native Android development studio.
 
 Home to:
 - **LeafRescue** (`com.clearthicket.leafrescue`): AI Plant Care, Leaf Disease Diagnosis & Smart Watering Tracker.
