@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+
+    <title>Privacy Policy | RecipeBox</title>
+    <meta name="description" content="Privacy Policy for RecipeBox Android application by Clear Thicket. Learn how your culinary data and personal privacy are safeguarded.">
+    <meta name="author" content="Clear Thicket">
+    <meta name="theme-color" content="#06140F">
+    <link rel="canonical" href="https://clearthicket.co.uk/recipebox/privacy.html">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="RecipeBox">
+    <meta property="og:title" content="Privacy Policy | RecipeBox">
+    <meta property="og:description" content="100% private, local-first culinary companion with BYOK AI freedom. Zero tracking, zero telemetry.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearthicket.co.uk/recipebox/privacy.html">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0">
+
+    <link rel="stylesheet" href="../themes.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+    <div class="container">
+        <nav>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="../index.html" class="studio-pill">← Clear Thicket Studio</a>
+                <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <img src="images/recipebox-icon-512.png" width="34" height="34" style="border-radius: 8px;" alt="RecipeBox Icon">
+                    <span style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF;">Recipe<span style="color: var(--primary);">Box</span></span>
+                </a>
+            </div>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+                <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+            </button>
+
+            <ul id="primary-nav">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#preview">Preview</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="privacy.html" class="active" style="color: var(--primary);">Privacy</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+    <section class="reveal pt-4 pb-4">
+        <div class="container" style="max-width: 860px;">
+            <div class="badge">
+                🔒 Official Privacy Policy
+            </div>
+
+            <h1 style="font-size: 2.6rem; font-weight: 800; margin: 16px 0 12px;">
+                Privacy Policy for RecipeBox
+            </h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 36px;">
+                Effective Date: November 10, 2026 · Application ID: <code>com.clearthicket.recipebox</code>
+            </p>
+
+            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; margin-bottom: 40px;">
+                <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 12px; color: var(--text);">
+                    Summary: 100% Local-First & BYOK Architecture
+                </h3>
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    RecipeBox is engineered from the ground up to respect culinary privacy. 
+                    <strong>Clear Thicket does not operate backend servers that store your recipes, photos, meal plans, or AI credentials.</strong> 
+                    All data is stored locally on your device in a secure SQLite database, and AI operations execute directly from your device to your selected provider using your personal API key or the app's starter quota.
+                </p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 32px; color: var(--text-secondary); line-height: 1.75;">
+
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 10px;">1. Information We Do NOT Collect</h2>
+                    <p>
+                        We do not collect, harvest, or transmit your name, email address, physical location, culinary habits, or dietary choices to Clear Thicket. 
+                        RecipeBox contains <strong>zero third-party advertising SDKs</strong>, <strong>zero analytics trackers</strong>, and <strong>zero data-broker telemetry libraries</strong>.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 10px;">2. Device Permissions Used by RecipeBox</h2>
+                    <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                        <li><strong>Camera (<code>android.permission.CAMERA</code>):</strong> Used only when you choose to take a photo of fridge/pantry ingredients or scan physical cookbook pages/recipe cards. Images are processed transiently in memory and stored locally in app-private storage.</li>
+                        <li><strong>Notifications (<code>android.permission.POST_NOTIFICATIONS</code>):</strong> Used on Android 13+ devices solely to deliver local cooking timer alerts and dinner prep reminders that you configure.</li>
+                        <li><strong>Microphone / Speech Recognition:</strong> Used transiently during Hands-Free Cook Mode when you activate voice navigation commands (e.g. "Next Step", "Repeat"). Audio is processed via Android's local speech-to-text service and is never recorded or uploaded.</li>
+                        <li><strong>Internet (<code>android.permission.INTERNET</code>):</strong> Used to fetch recipe web pages you explicitly share or paste, make direct HTTPS calls to AI APIs (Google Gemini, Anthropic Claude, OpenAI), and verify purchases with Google Play Billing.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 10px;">3. Artificial Intelligence & Bring Your Own Key (BYOK)</h2>
+                    <p>
+                        RecipeBox includes 5 complimentary cloud recipe extractions upon installation. To unlock unlimited recipe imports, you can upgrade to RecipeBox Pro and supply your own API key (Google Gemini, Anthropic Claude, or OpenAI) in Settings:
+                    </p>
+                    <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                        <li>Your custom API keys are stored securely on-device with encryption.</li>
+                        <li>When extracting recipes or analyzing fridge ingredients, prompts and images are sent directly via HTTPS from your phone to your chosen AI provider.</li>
+                        <li>Clear Thicket never sees, intercepts, logs, or stores your API keys or prompts. Data transmissions to AI providers are governed directly by their respective privacy policies (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--primary);">Google Privacy Policy</a>, <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener" style="color: var(--primary);">Anthropic Privacy Policy</a>, <a href="https://openai.com/privacy" target="_blank" rel="noopener" style="color: var(--primary);">OpenAI Privacy Policy</a>).</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 10px;">4. In-App Purchases (Google Play Billing)</h2>
+                    <p>
+                        RecipeBox Pro is an optional one-time lifetime purchase processed entirely by <strong>Google Play Billing</strong>. 
+                        Clear Thicket never receives or stores your credit card, debit card, or banking details. Google manages all payment transactions under Google Play Terms of Service.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 10px;">5. Local Storage & Backups</h2>
+                    <p>
+                        Your entire culinary database (recipes, tags, categories, weekly meal plans) is saved in a local SQLite database (Android Room) in private app storage. 
+                        When you use the Backup feature, RecipeBox exports a standard encrypted ZIP file using Android's Storage Access Framework (SAF) to your chosen destination (e.g., local storage, Downloads, or Google Drive). Clear Thicket has no access to your files or Google Drive.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 10px;">6. Data Retention & Deletion</h2>
+                    <p>
+                        Because all data resides exclusively on your local device:
+                    </p>
+                    <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                        <li>You can delete individual recipes, clear meal plans, or remove custom API keys at any time directly in the app.</li>
+                        <li>Clearing app data or uninstalling RecipeBox permanently erases all locally saved recipes, photos, preferences, and database records from your phone.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 10px;">7. Children's Privacy</h2>
+                    <p>
+                        RecipeBox is a general culinary application and is not directed at children under the age of 13. We do not knowingly collect personal information from children.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 10px;">8. Contact Information</h2>
+                    <p>
+                        If you have any questions or feedback regarding this Privacy Policy or your data, please contact:
+                    </p>
+                    <p style="margin-top: 8px;">
+                        <strong>Clear Thicket</strong><br>
+                        Developer: Darren Bromwich<br>
+                        Email: <a href="mailto:recipebox@clearthicket.co.uk" style="color: var(--primary);">recipebox@clearthicket.co.uk</a> (or <a href="mailto:contact@clearthicket.co.uk" style="color: var(--primary);">contact@clearthicket.co.uk</a>)<br>
+                        Website: <a href="https://clearthicket.co.uk" style="color: var(--primary);">https://clearthicket.co.uk</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding: 40px 0; border-bottom: 1px solid var(--border);">
+            <div>
+                <img src="images/recipebox-icon-512.png" width="40" height="40" style="border-radius: 10px;" alt="RecipeBox Icon">
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">
+                    RecipeBox by Clear Thicket · Smart Local-First Kitchen Companion.
+                </p>
+            </div>
+            <ul style="display: flex; gap: 24px; list-style: none; flex-wrap: wrap;">
+                <li><a href="../index.html" style="color: var(--text-secondary); text-decoration: none;">Clear Thicket Studio</a></li>
+                <li><a href="index.html" style="color: var(--text-secondary); text-decoration: none;">RecipeBox Home</a></li>
+                <li><a href="privacy.html" style="color: var(--text-secondary); text-decoration: none;">Privacy Policy</a></li>
+                <li><a href="support.html" style="color: var(--text-secondary); text-decoration: none;">Support & FAQ</a></li>
+            </ul>
+        </div>
+        <div style="padding: 24px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--text-muted); font-size: 0.82rem;">
+            <p>© 2026 Clear Thicket. All rights reserved.</p>
+            <p>Support: <a href="mailto:recipebox@clearthicket.co.uk" style="color: var(--primary);">recipebox@clearthicket.co.uk</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
