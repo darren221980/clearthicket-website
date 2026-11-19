@@ -39,7 +39,7 @@ clearthicket-website/
 ├── mendwise/                   # 🛠️ Mendwise privacy policy + icon
 │
 ├── leafrescue/                 # 🌿 LeafRescue App Section
-│   ├── index.html              # Full app showcase (AI diagnosis, Gemini, watering, Pro unlock)
+│   ├── index.html              # Full app showcase (AI diagnosis, Gemini, watering, £4.99 Pro unlock)
 │   ├── privacy.html            # Google Play Store Privacy Policy for LeafRescue
 │   ├── support.html            # LeafRescue Support & Help Center
 │   ├── style.css
