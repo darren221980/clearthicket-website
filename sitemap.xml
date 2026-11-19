@@ -21,17 +21,17 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://clearthicket.co.uk/recipebox/</loc>
+        <loc>https://clearthicket.co.uk/hobnote/</loc>
         <priority>0.9</priority>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://clearthicket.co.uk/recipebox/privacy.html</loc>
+        <loc>https://clearthicket.co.uk/hobnote/privacy.html</loc>
         <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://clearthicket.co.uk/recipebox/support.html</loc>
+        <loc>https://clearthicket.co.uk/hobnote/support.html</loc>
         <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>

@@ -3,8 +3,10 @@
 The official portfolio, app showcase, and privacy hub for **Clear Thicket** — an independent native Android development studio.
 
 Home to:
-- **LeafRescue** (`com.clearthicket.leafrescue`): AI Plant Care, Leaf Disease Diagnosis & Smart Watering Tracker.
-- **BreatheRun** (`com.darren.breatherun`): Audio-Guided Breathing Coach & GPS Running Tracker.
+- **Hobnote** (`com.clearthicket.hobnote`, formerly RecipeBox): Private recipe keeper, meal planner & hands-free Cook Mode. Coming soon to Google Play.
+- **LeafRescue** (`com.clearthicket.leafrescue`): AI Plant Care, Leaf Disease Diagnosis & Smart Watering Tracker. Live on Google Play.
+- **Mendwise** (`com.clearthicket.mendwise`): AI Home Repair & Maintenance Companion. Coming soon to Google Play.
+- **BreatheRun** (`com.darren.breatherun`): Audio-Guided Breathing Coach & GPS Running Tracker. Live on Google Play.
 
 ---
 
@@ -29,11 +31,16 @@ clearthicket-website/
 │   │   ├── logo-horizontal.svg # Full Clear Thicket Studio wordmark & emblem
 │   │   └── logo-icon.svg       # Standalone emblem
 │   └── apps/
+│       ├── hobnote-icon-512.png
 │       ├── leafrescue-icon-512.png
 │       └── breatherun-icon-512.png
 │
+├── hobnote/                    # 🍳 Hobnote App Section (index, privacy, support, images)
+├── recipebox/                  # Redirect stubs: old RecipeBox URLs → hobnote/
+├── mendwise/                   # 🛠️ Mendwise privacy policy + icon
+│
 ├── leafrescue/                 # 🌿 LeafRescue App Section
-│   ├── index.html              # Full app showcase (AI diagnosis, Gemini, watering, £4.99 unlock)
+│   ├── index.html              # Full app showcase (AI diagnosis, Gemini, watering, Pro unlock)
 │   ├── privacy.html            # Google Play Store Privacy Policy for LeafRescue
 │   ├── support.html            # LeafRescue Support & Help Center
 │   ├── style.css
