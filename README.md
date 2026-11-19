@@ -36,7 +36,7 @@ clearthicket-website/
 │       └── breatherun-icon-512.png
 │
 ├── hobnote/                    # 🍳 Hobnote App Section (index, privacy, support, images)
-├── mendwise/                   # 🛠️ Mendwise privacy policy + icon
+├── mendwise/                   # 🛠️ Mendwise App Section (index, privacy, icon)
 │
 ├── leafrescue/                 # 🌿 LeafRescue App Section
 │   ├── index.html              # Full app showcase (AI diagnosis, Gemini, watering, £4.99 Pro unlock)
