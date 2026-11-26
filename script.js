@@ -1,5 +1,5 @@
 /* ==========================================================
-   BreatheRun Website
+   Clear Thicket website
    script.js
 
    Everything here is an enhancement. The `js` class is set in
