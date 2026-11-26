@@ -2614,6 +2614,22 @@ hr{
     top: calc(50% - 260px);
 }
 
+/* Google Play screenshots: each already has its own phone frame
+   and caption, so the page adds only rounding and a shadow. */
+
+.store-shot {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.store-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
 .hero-screen {
     margin-top: 56px;
     max-width: 300px;
